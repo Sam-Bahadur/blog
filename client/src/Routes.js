@@ -10,6 +10,8 @@ import AddBlog from './container/Admin/AddBlog';
 import UserPosts from './components/Admin/UserPosts';
 import EditBlog from './container/Admin/EditBlog';
 import Logout from './components/Admin/Logout'
+import Register from './container/Admin/Register';
+
 
 
 export default function Routes() {
@@ -23,6 +25,7 @@ export default function Routes() {
             <Route path="/user" exact component={Auth(User,true)} />
             <Route path="/user/logout" exact component={Auth(Logout,true)} />
             <Route path="/user/add" exact component ={Auth(AddBlog,true)}/>
+            <Route path="/user/register" exact component ={Auth(Register,true)}/>
             <Route path="/user/user_blogs" exact component={Auth(UserPosts,true)} />
             <Route path="/user/edit_post/:id" exact component ={Auth(EditBlog,true)}/>
         </Switch>
