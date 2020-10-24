@@ -19,13 +19,13 @@ const SidenavItems = ({user}) => {
             link:'/user',
             restricted: true
         },
-        // {
-        //     type:'navItem',
-        //     icon:'home',
-        //     text:'Add Admins',
-        //     link:'/user/register',
-        //     restricted: false
-        // },
+        {
+            type:'navItem',
+            icon:'home',
+            text:'Add User',
+            link:'/user/register',
+            restricted: false
+        },
         {
             type:'navItem',
             icon:'home',

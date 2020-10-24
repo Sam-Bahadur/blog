@@ -6,7 +6,8 @@ const config ={
     },
     default:{
         SECRET:  'SUPERSECRETPASSWORD123',
-        DATABASE: 'mongodb://localhost:27017/blogs',
+        // DATABASE: 'mongodb://localhost:27017/blogs',
+        DATABASE: "mongodb+srv://pradeep:pradeep@cluster0.b7pme.mongodb.net/blog?retryWrites=true&w=majority",
     }
 }
 

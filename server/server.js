@@ -7,6 +7,7 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DATABASE)
+// mongoose.connect('mongodb+srv://pradeep:pradeep@cluster0.b7pme.mongodb.net/blog?retryWrites=true&w=majority')
 
 const { User } = require('./models/user');
 const { Blog } = require('./models/blog');
@@ -16,6 +17,9 @@ const blog = require('./models/blog');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+// app.user(express.static('client/build'))
+
 
 // get 
 app.get('/api/getblog',(req,res)=>{
@@ -159,7 +163,16 @@ app.delete('/api/delete_blog',(req,res)=>{
     })
 })
 
+// for production
+// if(process.env.NODE_ENV === 'production'){
+//     const path = require('path');
+//     app.get('/*',(req,res)=>{
+//         res.sendfile(path.resolve(__dirname,'../client','build','index.html'))
+//     })
+// }
+
+
 const port = process.env.PORT || 3001;
 app.listen(port,()=>{
-    console.log('server running');
+    console.log(`server running on port ${port}`);
 })
