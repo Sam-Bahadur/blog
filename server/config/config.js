@@ -1,7 +1,8 @@
 const config ={
     production:{
         SECRET:  process.env.SECRET,
-        DATABASE: process.env.MONGODB_URI,
+        // DATABASE: process.env.MONGODB_URI,
+        DATABASE: "mongodb+srv://pradeep:pradeep@cluster0.b7pme.mongodb.net/blog?retryWrites=true&w=majority",
 
     },
     default:{

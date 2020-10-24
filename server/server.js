@@ -18,7 +18,7 @@ const blog = require('./models/blog');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// app.user(express.static('client/build'))
+app.use(express.static('client/build'))
 
 
 // get 
@@ -164,12 +164,12 @@ app.delete('/api/delete_blog',(req,res)=>{
 })
 
 // for production
-// if(process.env.NODE_ENV === 'production'){
-//     const path = require('path');
-//     app.get('/*',(req,res)=>{
-//         res.sendfile(path.resolve(__dirname,'../client','build','index.html'))
-//     })
-// }
+if(process.env.NODE_ENV === 'production'){
+    const path = require('path');
+    app.get('/*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'../client','build','index.html'))
+    })
+}
 
 
 const port = process.env.PORT || 3001;
