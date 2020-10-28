@@ -29,7 +29,7 @@ export default function(ComposedClass,reload){
 
         render(){
             if(this.state.loading){
-                return <div>Loading...</div>
+                return <div className="loader">Loading...</div>
             }
             return(
                 <ComposedClass {...this.props} user={this.props.user}/>

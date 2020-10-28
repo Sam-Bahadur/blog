@@ -17,7 +17,6 @@ import Register from './container/Admin/Register';
 export default function Routes() {
     return (
         <Layout>
-            
         <Switch>
             <Route path="/" exact component={Auth(Home,null)} />
             <Route path="/blogs/:id" exact component={Auth(BlogView,null)} />

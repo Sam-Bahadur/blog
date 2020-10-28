@@ -10,11 +10,15 @@ class UserPosts extends Component {
     showUserPosts=(user)=>(
         user.userPosts ? 
         user.userPosts.map(item =>(
-            <div key={item._id}>
+        
+            <div key={item._id} className="user_blog">
+                <li>
                 <Link to={`/user/edit_post/${item._id}`}>
                     {item.title}
                 </Link>
+                </li>
             </div>
+            
         ))
         :null
         )
@@ -22,9 +26,10 @@ class UserPosts extends Component {
             let user = this.props.user;
         console.log(this.props);
         return (
-            <div>
-                <h4>your Posts:</h4>
+            <div className="user_blogs">
+                <h4>Your Blogs:</h4>
                 {this.showUserPosts(user)}
+                
             </div>
         )
     }

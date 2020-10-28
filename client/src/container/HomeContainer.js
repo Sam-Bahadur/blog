@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {getBlogs} from '../actions'
 import BookItem from './../widgetsUI/BookItem';
+import { Link } from 'react-router-dom';
+import ImageSlider from './../components/ImageSlider/ImageSlider';
 
 
 class HomeContainer extends Component {
@@ -11,9 +13,16 @@ class HomeContainer extends Component {
 
     renderItems = (blogs) =>(
         blogs.list ? blogs.list.map(item=>(
+            <>
             <BookItem {...item} key={item._id}/>
+            </>
         )) :null
     )
+    imageSlide = (blogs)=>(
+            <>
+            <ImageSlider />
+            </>
+        )
 
     loadmore =()=>{
         let count = this.props.blogs.list.length;
@@ -22,11 +31,20 @@ class HomeContainer extends Component {
 
     render() {
         return (
-            <div>
-              {this.renderItems(this.props.blogs)}
-              <div onClick={this.loadmore} className="loadmore">
-                  Load more
+            <div className="home_div">
+            {this.imageSlide(this.props.blogs)}
+
+            <div className="home_content">
+                <div className="blog_name_container">
+                <span>Blogs</span> 
                 </div>
+              {this.renderItems(this.props.blogs)}
+              <div onClick={this.loadmore} className="loadmore_alt"
+            //   className="loadmore"> 
+            >
+                  Load more >
+                </div>
+            </div>
             </div>
         )
     }

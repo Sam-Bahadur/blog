@@ -16,15 +16,19 @@ export default class Header extends Component {
         return (
             <header>
                 <div className="open_nav">
+                
                 <GiHamburgerMenu 
                 onClick={()=>this.setState({
                     showNav:true
                 })}
                 style={{
-                    color:'#000',
-                    padding: '10px',
-                    cursor: 'pointer'
+                    color:'#fff',
+                    padding: '0px',
+                    cursor: 'pointer',
+                    fontSize: '40px',
+                    marginLeft: '1rem'
                 }} />
+
                 </div> 
                 <Nav 
                 showNav={this.state.showNav}
