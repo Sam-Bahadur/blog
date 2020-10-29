@@ -4,6 +4,7 @@ import {getBlogs} from '../actions'
 import BookItem from './../widgetsUI/BookItem';
 import { Link } from 'react-router-dom';
 import ImageSlider from './../components/ImageSlider/ImageSlider';
+import SidenavItems from './../components/Header/Sidenav/Sidenav_items';
 
 
 class HomeContainer extends Component {
@@ -31,6 +32,7 @@ class HomeContainer extends Component {
 
     render() {
         return (
+            <>
             <div className="home_div">
             {this.imageSlide(this.props.blogs)}
 
@@ -46,6 +48,7 @@ class HomeContainer extends Component {
                 </div>
             </div>
             </div>
+            </>
         )
     }
 }

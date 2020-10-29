@@ -15,10 +15,20 @@ export default function BookItem(item) {
                     <h2>{item.title}</h2>
                     </div>
                     <div className="book_items">
-                    <div className="book_author">
-                    {item.author}
-                    </div>
+                        <div className="blog_author_img">
+                            <div className="blog_author_img_img">
+                            <img className="small_pic" 
+                            src={ 
+                            "img_author/" + item.author + ".png" ? "img_author/" + item.author + ".png" :
+                            "img_author/avatar.png"} alt=""/>
+                            </div>
+                            <div className="book_author">
+                               {item.author}
+                            </div>
+                        </div>
+                    <div className="book_desc">
                     {item.description.slice(0,60)}...
+                    </div>
                     </div>
                 </Link>
                 </div>

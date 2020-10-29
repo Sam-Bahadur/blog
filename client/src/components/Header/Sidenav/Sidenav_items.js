@@ -82,7 +82,7 @@ const SidenavItems = ({user}) => {
         :null
     )
     return (
-        <div>
+        <div className="navbar_bigscreen">
             {showItems()}
         </div>
     )
