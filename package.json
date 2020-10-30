@@ -27,6 +27,7 @@
     "nodemon": "^2.0.5",
     "react-bootstrap": "^1.4.0",
     "react-icons": "^3.11.0",
+    "react-nl2br": "^0.6.1",
     "react-simple-sidenav": "^2.0.0",
     "redux-thunk": "^2.3.0"
   }

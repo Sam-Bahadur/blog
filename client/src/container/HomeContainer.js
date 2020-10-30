@@ -38,7 +38,7 @@ class HomeContainer extends Component {
 
             <div className="home_content">
                 <div className="blog_name_container">
-                <span>Blogs</span> 
+                <span>Blog Posts</span> 
                 </div>
               {this.renderItems(this.props.blogs)}
               <div onClick={this.loadmore} className="loadmore_alt"

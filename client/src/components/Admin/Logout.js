@@ -12,7 +12,7 @@ export default function Logout(props) {
     })
     return (
         <div>
-            <h1>sorry to see you go</h1>
+            <h1>See you again</h1>
         </div>
     )
 }

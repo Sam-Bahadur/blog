@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { addBlog, clearNewBlog } from '../../actions'
+const nl2br = require('react-nl2br');
 
 class AddBlog extends Component {
 
@@ -19,6 +20,7 @@ handleInput=(event,name)=>{
         formdata:newFormdata
     })
 }
+
 
     submitForm=(e)=>{
         e.preventDefault();

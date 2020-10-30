@@ -10,37 +10,50 @@ export default class Header extends Component {
         showNav:false
     }
 
+    showBurger =()=>{
+        return <>
+          <div className="open_nav">
+        <GiHamburgerMenu 
+        onClick={()=>this.setState({
+            showNav:true
+        })}
+        style={{
+            color:'#000',
+            padding: '0px',
+            cursor: 'pointer',
+            fontSize: '40px',
+            marginLeft: '1rem'
+        }} />
+
+        </div> 
+        <Nav 
+        showNav={this.state.showNav}
+        onHideNav={()=>this.onHideNav()}
+        />
+        </>
+    }
+
+    showNormalNav=()=>{
+        return <div>
+        <SidenavItems />
+        </div>
+    }
+
     onHideNav=()=>{
         this.setState({showNav:false})
     }
     render() {
         return (
+            <>
             <header>
-                <div className="open_nav">
-                <GiHamburgerMenu 
-                onClick={()=>this.setState({
-                    showNav:true
-                })}
-                style={{
-                    color:'#fff',
-                    padding: '0px',
-                    cursor: 'pointer',
-                    fontSize: '40px',
-                    marginLeft: '1rem'
-                }} />
-
-                </div> 
-                <Nav 
-                showNav={this.state.showNav}
-                onHideNav={()=>this.onHideNav()}
-                />
                 <Link to="/" className="logo">
-                    <img src="logo512.png" alt=""/>
+                Upholding Rights of minorities Beyond Borders <br></br> South Asia (URMB)
                 </Link>
-                <div className="navbar_bigscreen">
-            <SidenavItems />
-            </div>
             </header>
+               {window.innerWidth < 768 ? 
+               this.showBurger() : 
+               this.showNormalNav()}
+               </>
         )
     }
 }

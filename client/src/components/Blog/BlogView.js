@@ -26,7 +26,7 @@ class BlogView extends Component {
     render() {
         let blogs = this.props.blogs;
         return (
-            <div>
+            <div style={{'white-space': 'pre-line'}}>
                 {this.renderBlog(blogs)}
             </div>
         )

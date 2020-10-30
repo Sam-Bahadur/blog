@@ -19,11 +19,16 @@ export default function BookItem(item) {
                             <div className="blog_author_img_img">
                             <img className="small_pic" 
                             src={ 
-                            "img_author/" + item.author + ".png" ? "img_author/" + item.author + ".png" :
-                            "img_author/avatar.png"} alt=""/>
+
+                                "img_author/" + item.author.toLowerCase() + ".png" ? 
+                            "img_author/" + item.author.toLowerCase() + ".png" :
+                            "img_author/avatar.png"
+                            } alt=""/>
                             </div>
                             <div className="book_author">
-                               {item.author}
+                                <h3>
+                            {item.author}
+                                </h3>
                             </div>
                         </div>
                     <div className="book_desc">

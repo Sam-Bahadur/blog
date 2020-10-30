@@ -18,7 +18,7 @@ export default function ImageSlider(blogs) {
             {/* <Link to={`/blogs/${blogs._id}`} className="book_item">
             </Link> */}
             <h3>{blogs.title}</h3>
-            <p>FIrst item is here</p>
+            <p>Nepal Case - Campaign Against Chaupadi</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
