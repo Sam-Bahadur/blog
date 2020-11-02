@@ -16,8 +16,15 @@ class BlogView extends Component {
         <h2>{blogs.blog.title}</h2>
         <h5>Author: {blogs.blog.author}</h5>
         </div>
+        <div className="blog_image">
+                <img 
+                src={`/uploads/${blogs.blog._id}.jpg`} 
+                onError={(e) => {
+                    e.target.src = "https://source.unsplash.com/collection/190727/800x600" }}
+                alt=""/>
+            </div>
         <div className="br_review">
-            <h6>{blogs.blog.description}</h6>
+            <h5>{blogs.blog.description}</h5>
         </div>
         </div>
         :null

@@ -526,14 +526,16 @@ tr:nth-child(even) {
 }
 
 .br_container .br_header h2 {
-  font-weight: 300;
-  font-size: 38px;
+  font-weight: 700;
+  font-size: 2rem;
   margin: 0px;
+  text-transform: capitalize;
 }
 .br_container .br_header h5 {
   margin: 5px 0px;
-  font-size: 31px;
-  color: #02bcd4;
+  font-size: 1.5rem;
+  /* color: #02bcd4; */
+  color: var(--primary_dark);
 }
 
 .br_container .br_header .br_reviewer {
@@ -587,6 +589,16 @@ tr:nth-child(even) {
 .br_container .br_box .right div {
   font-size: 40px;
   font-weight: 300;
+}
+.br_container .blog_image {
+  width: 50%;
+  margin: 0 auto;
+}
+.br_container .blog_image img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: top;
 }
 
 .logout_container h1 {

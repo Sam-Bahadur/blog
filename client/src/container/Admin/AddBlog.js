@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { addBlog, clearNewBlog } from '../../actions'
-const nl2br = require('react-nl2br');
+import axios from 'axios'
+import Upload from './Upload';
+
 
 class AddBlog extends Component {
 
@@ -22,7 +24,7 @@ handleInput=(event,name)=>{
 }
 
 
-    submitForm=(e)=>{
+    submitForm= (e)=>{
         e.preventDefault();
         console.log(this.state.formdata);
         this.props.dispatch(addBlog({
@@ -31,22 +33,29 @@ handleInput=(event,name)=>{
         }))
     }
 
+
     componentWillUnmount(){
         this.props.dispatch(clearNewBlog())
     }
 
     showNewBlog = (blog) =>(
-        blog.post ? <div className="conf_link">
+        
+        blog.post ?
+        <>
+        <Upload blogid= {this.props.blogs.newblog.blogId}/>
+        <div className="conf_link">
             {console.log(this.props.blogs.newblog)}
             Done!!! <Link to={`/blogs/${blog.blogId}`}>
                 Click here to see the post
             </Link>
         </div>
+        </>
         : null
     )
 
     render() {
         return (
+            <>
             <div className="rl_container article">
                 <form onSubmit={this.submitForm}>
                 <h2>Add a Blog</h2>
@@ -60,21 +69,24 @@ handleInput=(event,name)=>{
                 value={this.state.formdata.title}
                 onChange={(event)=>this.handleInput(event,'title')}/>
                 </div>
-
                 <textarea 
                 value={this.state.formdata.description}
                 placeholder="enter the blog" 
                 onChange={(event)=>this.handleInput(event,'description')}/>
-
+                <div className="form_element">
+                {/* <Upload /> */}
+                </div>
                 <button type="submit">add blog</button>
+                </form>
                 {
                     this.props.blogs.newblog ? 
                     this.showNewBlog(this.props
-                    .blogs.newblog)
-                    :null
-                }
-                </form>
+                        .blogs.newblog)
+                        :null
+                    }
+                
             </div>
+                    </>
         )
     }
 }
