@@ -17,6 +17,7 @@ const blog = require('./models/blog');
 
 
 app.use(fileUpload());
+app.use(express.static('client/public'))
 
 // file upload endpoint
 
@@ -37,8 +38,6 @@ app.post('/api/upload', (req, res) => {
   
 app.use(bodyParser.json());
 app.use(cookieParser());
-
-app.use(express.static('client/build'))
 
 
 // get 
