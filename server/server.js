@@ -17,9 +17,9 @@ const blog = require('./models/blog');
 
 
 app.use(fileUpload());
-app.use(express.static('client/public'))
 
 // file upload endpoint
+app.use(express.static('client/build'))
 
 app.post('/api/upload', (req, res) => {
     if (req.files === null) {
@@ -27,7 +27,7 @@ app.post('/api/upload', (req, res) => {
     }
     const file = req.files.file;
 
-    file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, err => {
+    file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, err => {
       if (err) {
         console.error(err);
         return res.status(500).send(err);
@@ -38,6 +38,7 @@ app.post('/api/upload', (req, res) => {
   
 app.use(bodyParser.json());
 app.use(cookieParser());
+
 
 
 // get 
