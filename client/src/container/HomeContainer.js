@@ -16,6 +16,7 @@ class HomeContainer extends Component {
         blogs.list ? blogs.list.map(item=>(
             <>
             <BookItem {...item} key={item._id}/>
+            <div className="blog_card_dividor"></div>
             </>
         )) :null
     )

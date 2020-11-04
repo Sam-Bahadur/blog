@@ -76,8 +76,9 @@ handleInput=(event,name)=>{
                         </div> : null
                         }
                 <h2>Edit the Blog</h2>
+                <button type="submit">Update Blog</button>
                 <div className="form_element">
-                <input type="text" placeholder="enter your name" 
+                <input type="text" placeholder="Authors Name" 
                 value={this.state.formdata.author}
                 onChange={(event)=>this.handleInput(event,'author')}/>
                 </div>
@@ -91,14 +92,14 @@ handleInput=(event,name)=>{
                 value={this.state.formdata.description}
                 onChange={(event)=>this.handleInput(event,'description')}/>
 
-                <button type="submit">Update blog</button>
+                <button type="submit">Update Blog</button>
 
 
                 <div className="delete_post">
                     <div className="button">
                         
                 <div onClick={this.deletePost}>
-                    Delete Review
+                    Delete Blog
                 </div>
                     </div>
 

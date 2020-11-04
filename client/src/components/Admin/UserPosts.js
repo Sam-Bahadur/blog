@@ -11,12 +11,33 @@ class UserPosts extends Component {
         user.userPosts ? 
         user.userPosts.map(item =>(
         
-            <div key={item._id} className="user_blog">
-                <li>
-                <Link to={`/user/edit_post/${item._id}`}>
+            // <div key={item._id} className="user_blog">
+            //     <li>
+                // <Link to={`/user/edit_post/${item._id}`}>
+                //     {item.title}
+                // </Link>
+            //     </li>
+            // </div>
+
+            <div className="blog_card_user">
+                {/* <div className="flex_image">
+                    <img
+                    src= {`uploads/${item._id}.jpg`}
+                     onError={(e) => {
+                        e.target.src = "https://source.unsplash.com/collection/190727/800x600" }}
+                    />
+                    </div> */}
+                    < div className="book_header">
+                        <span>
                     {item.title}
-                </Link>
-                </li>
+                        </span>
+                    <button>
+                    <Link to={`/user/edit_post/${item._id}`}>
+                        edit
+                    </Link>
+                    </button>
+                    
+                    </div>
             </div>
             
         ))
@@ -27,9 +48,9 @@ class UserPosts extends Component {
         console.log(this.props);
         return (
             <div className="user_blogs">
-                <h4>Your Blogs:</h4>
+                <h1>Your Blogs:</h1>
                 {this.showUserPosts(user)}
-                
+
             </div>
         )
     }

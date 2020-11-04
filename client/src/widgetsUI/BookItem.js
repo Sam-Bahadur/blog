@@ -12,8 +12,6 @@ export default function BookItem(item) {
                     src= {`uploads/${item._id}.jpg`}
                      onError={(e) => {
                         e.target.src = "https://source.unsplash.com/collection/190727/800x600" }}
-
-
                     // src={`uploads/${item._id}.jpg`}
                     />
                 </div>

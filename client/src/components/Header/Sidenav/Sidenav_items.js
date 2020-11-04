@@ -59,10 +59,10 @@ const SidenavItems = ({user}) => {
 
     const element = (item,i) =>(
         <div key={i} className={item.type}>
-            <Link to={item.link}>
+                <Link to={item.link}>
                 {item.text}
             </Link>
-        </div>
+                </div>
     )
     const showItems=()=>(
         user.login ? 

@@ -20,6 +20,9 @@ export default function Footer() {
         <div className="footer_div">
             <h4>copyright 2020</h4>
         </div>
+        <div className="footer_div_media">
+            <h6>developed by <span>	&#169;mayan media</span></h6>
+        </div>
         </>
     )
 }

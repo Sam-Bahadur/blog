@@ -47,7 +47,7 @@ export default class Header extends Component {
             <>
             <header>
                 <Link to="/" className="logo">
-                Upholding Rights of minorities Beyond Borders <br></br> South Asia (URMB)
+                Upholding Rights of Minorities Beyond Borders (URMB) <br></br> South Asia
                 </Link>
             </header>
                {window.innerWidth < 768 ? 
