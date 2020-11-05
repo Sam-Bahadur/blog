@@ -53,7 +53,7 @@ const Upload = (props) => {
     <Fragment>
       <form onSubmit={onSubmit}>
           <div>
-              <h5>upload a thumbnail</h5>
+              <h5>Upload a Thumbnail</h5>
           </div>
         <div>
           <input
@@ -61,9 +61,9 @@ const Upload = (props) => {
             id='customFile'
             onChange={onChange}
           />
-          <label htmlFor='customFile'>
+          {/* <label htmlFor='customFile'>
             {filename}
-          </label>
+          </label> */}
         </div>
 
         <input

@@ -2,8 +2,10 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 export default function BookItem(item) {
+    const dt  = new Date(item.date)
+    var month = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"][dt.getMonth()];
     return (
-        
         <>
                 <div className="blog_card">
                 <div className="flex_image">
@@ -11,7 +13,7 @@ export default function BookItem(item) {
                     <img 
                     src= {`uploads/${item._id}.jpg`}
                      onError={(e) => {
-                        e.target.src = "https://source.unsplash.com/collection/190727/800x600" }}
+                        e.target.src = "uploads/2.jpg" }}
                     // src={`uploads/${item._id}.jpg`}
                     />
                 </div>
@@ -42,9 +44,16 @@ export default function BookItem(item) {
                             {item.author}
                                 </h3>
                             </div>
+                            
                         </div>
+                        <div className="blog_date">
+                                <h6>
+                                {/* {item.date.slice(0,10)} */}
+                                &#128337; {month.slice(0,3)} {dt.getFullYear()}
+                                </h6>
+                                </div>
                     <div className="book_desc">
-                    {item.description.slice(0,60)}...
+                    {item.description.slice(0,90)}...
                     </div>
                     </div>
                 </Link>

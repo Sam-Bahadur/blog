@@ -17,6 +17,11 @@ const blogSchema = mongoose.Schema({
     ownerId:{
         type: String,
         required: true,
+    },
+    date:{
+        type: Date,
+        required: true,
+        default: Date.now
     }
 },{
     timestamp:true

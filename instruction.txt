@@ -8,7 +8,7 @@
 -> enter blog ko size thulo (done)
 -> delete blog ko button sano (done)
 -> update blog button-> mathi pani rakhne (done)
+-> my profile ko display alik ramro please(done)
+-> blog view ko photo thikka dekhaunu paro(done)
 -> font haru jagaran nepal.com ma j cha tei
--> my profile ko display alik ramro please
--> blog view ko photo thikka dekhaunu paro 
 -> update ma thumbnail panni rakhne *

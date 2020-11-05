@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { getBlog, updateBlog, clearBlog, deleteBlog } from './../../actions/index';
+import Upload from './Upload';
 
 class EditBlog extends PureComponent {
 
@@ -91,7 +92,7 @@ handleInput=(event,name)=>{
                 <textarea 
                 value={this.state.formdata.description}
                 onChange={(event)=>this.handleInput(event,'description')}/>
-
+                <Upload blogid= {this.props.match.params.id}/>
                 <button type="submit">Update Blog</button>
 
 

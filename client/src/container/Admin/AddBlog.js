@@ -12,7 +12,8 @@ class AddBlog extends Component {
         formdata:{
             title:'',
             author:'',
-            description:''
+            description:'',
+            date: Date.now
         }
     }
 handleInput=(event,name)=>{
@@ -68,6 +69,11 @@ handleInput=(event,name)=>{
                 <input type="text" placeholder="enter title of the blog" 
                 value={this.state.formdata.title}
                 onChange={(event)=>this.handleInput(event,'title')}/>
+                </div>
+                <div className="form_element">
+                <input type="date"
+                value={this.state.formdata.date}
+                onChange={(event)=>this.handleInput(event,'date')}/>
                 </div>
                 <textarea 
                 value={this.state.formdata.description}
