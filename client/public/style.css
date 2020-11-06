@@ -31,6 +31,7 @@ body {
 }
 .blog_name_container {
   position: relative;
+  /* background: var(--primary_); */
 }
 .blog_name_container::after {
   content: "";
@@ -206,6 +207,7 @@ a:hover {
 }
 
 .red_tag {
+  margin: 2rem;
   background: #f44336;
   color: #fff;
   padding: 10px;
@@ -380,12 +382,17 @@ header .navItem span {
   background: #dbdbdb;
 }
 .loadmore_alt {
+  background: var(--primary_dark);
+  padding: 0.5rem 1rem;
+  width: max-content;
   cursor: pointer;
+  color: white;
+  margin-top: 1rem;
   font-size: 1.5rem;
-  transition: 0.3s color ease-in-out;
+  transition: 0.3s background ease-in-out;
 }
 .loadmore_alt:hover {
-  color: rgb(194, 0, 0);
+  background: var(--primary_);
 }
 
 /* blog_view */

@@ -5,6 +5,12 @@ const mongoose = require('mongoose');
 const config = require('./config/config').get(process.env.NODE_ENV);
 const app = express();
 const fileUpload = require('express-fileupload')
+var fs = require('fs')
+
+// imagemin impoert
+const imagemin = require('imagemin');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DATABASE)
@@ -14,13 +20,14 @@ const { User } = require('./models/user');
 const { Blog } = require('./models/blog');
 const { auth } = require('./middleware/auth')
 const blog = require('./models/blog');
-
+const { json } = require('express');
 
 app.use(fileUpload());
 
-// file upload endpoint
 app.use(express.static('client/build'))
+app.use(express.json())
 
+// file upload endpoint
 app.post('/api/upload', (req, res) => {
     if (req.files === null) {
       return res.status(400).json({ msg: 'No file uploaded' });
@@ -30,7 +37,6 @@ app.post('/api/upload', (req, res) => {
     // file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, 
     // development
     file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, 
-
     err => {
       if (err) {
         console.error(err);
@@ -39,6 +45,17 @@ app.post('/api/upload', (req, res) => {
       res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
     });
   });
+
+//   file delete endpoint
+app.post('/api/deletefile',(req,res)=>{
+    let id = req.query.id;
+    fs.unlink(`${__dirname}/../client/public/uploads/${id}.jpg`, function (err) {
+        if (err) {
+            console.log('File not found');
+        }
+        console.log('File deleted!');
+    }); 
+})
   
 app.use(bodyParser.json());
 app.use(cookieParser());

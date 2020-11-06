@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { getBlog, updateBlog, clearBlog, deleteBlog } from './../../actions/index';
 import Upload from './Upload';
+import axios from 'axios';
+const fs = require('fs')
 
 class EditBlog extends PureComponent {
 
@@ -28,6 +30,14 @@ handleInput=(event,name)=>{
     }
 
     deletePost =()=>{
+        const id = [ this.props.match.params.id ];
+        const options = {
+            body : JSON.stringify(id)
+        }
+        axios.post(`/api/deletefile?id=${id}`, options
+        ).then(response=>{
+            console.log(response.data.status);
+        })
         this.props.dispatch(deleteBlog(this.props.match.params.id))
     }
     redirectUser =()=>{
@@ -69,13 +79,7 @@ handleInput=(event,name)=>{
                         </div>
                         :null
                     }
-                    {
-                        blogs.postDeleted ? 
-                        <div className="red_tag">
-                            post deleted
-                            {this.redirectUser()}
-                        </div> : null
-                        }
+                    
                 <h2>Edit the Blog</h2>
                 <button type="submit">Update Blog</button>
                 <div className="form_element">
@@ -103,7 +107,13 @@ handleInput=(event,name)=>{
                     Delete Blog
                 </div>
                     </div>
-
+                    {
+                        blogs.postDeleted ? 
+                        <div className="red_tag">
+                            post deleted
+                            {this.redirectUser()}
+                        </div> : null
+                        }
                 </div>
                 </form>
             </div>
