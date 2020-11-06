@@ -36,7 +36,8 @@ app.post('/api/upload', (req, res) => {
     // production
     // file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, 
     // development
-    file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, 
+    file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg` || 
+    `${__dirname}/../client/build/uploads/${file.name}.jpg` , 
     err => {
       if (err) {
         console.error(err);
@@ -53,13 +54,14 @@ app.post('/api/deletefile',(req,res)=>{
         if (err) {
             console.log('File not found');
         }
-        console.log('File deleted!');
+        else{
+            console.log('File deleted!');
+        }
     }); 
 })
   
 app.use(bodyParser.json());
 app.use(cookieParser());
-
 
 
 // get 
@@ -103,7 +105,6 @@ app.get('/api/logout',auth,(req,res)=>{
         if(err) return res.status(400).send(err);
         res.sendStatus(200)
     })
-
 })
 
 // user posts
@@ -117,7 +118,6 @@ app.get('/api/user_posts',(req,res)=>{
 // post
 app.post('/api/blog',(req,res)=>{
     const blog = new Blog(req.body)
-
     blog.save((err,doc)=>{
         if(err) return res.status(400).send(err);
         res.status(200).json({

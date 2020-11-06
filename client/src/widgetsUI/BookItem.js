@@ -49,7 +49,7 @@ export default function BookItem(item) {
                         <div className="blog_date">
                                 <h6>
                                 {/* {item.date.slice(0,10)} */}
-                                &#128337; {month.slice(0,3)} {dt.getFullYear()}
+                                &#128197;	   {month.slice(0,3)} {dt.getFullYear()}
                                 </h6>
                                 </div>
                     <div className="book_desc">
