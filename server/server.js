@@ -34,9 +34,9 @@ app.post('/api/upload', (req, res) => {
     }
     const file = req.files.file;
     // production
-    file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, 
+    // file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, 
     // development
-    // file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, 
+    file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, 
     err => {
       if (err) {
         console.error(err);
