@@ -33,10 +33,10 @@ app.post('/api/upload', (req, res) => {
       return res.status(400).json({ msg: 'No file uploaded' });
     }
     const file = req.files.file;
-    // production
-    // file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, 
+    // production heroku
+    file.mv(`${__dirname}/../client/build/uploads/${file.name}.jpg`, 
     // development
-    file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, 
+    // file.mv(`${__dirname}/../client/public/uploads/${file.name}.jpg`, 
     err => {
       if (err) {
         console.error(err);

@@ -4,16 +4,18 @@ export default function Footer() {
     return (
         <>
         <div className="footer_container">
-        <h2>Supported by</h2>
         <div className="footer_div_two">
             <div className="logo1">
-                <img src="logo_test.png" alt=""/>
+            <h1>In partnership with</h1>
+                <img src={'images/left.png'} alt=""/>
             </div>
             <div className="logo2">
-                <img src="logo_test1.png" alt=""/>
+            <h1></h1>
+                <img src="images/middle.jpg" alt=""/>
             </div>
             <div className="logo3">
-                <img src="logo_test.png" alt=""/>
+            <h1>In collaboration with</h1>
+                <img src="images/right.png" alt=""/>
             </div>
         </div>
         </div>

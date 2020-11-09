@@ -131,6 +131,7 @@ body {
 .footer_container {
   background: var(--primary_dark);
 }
+
 .footer_container h2 {
   padding: 2rem 2rem;
   font-size: 1.5rem;
@@ -170,19 +171,22 @@ body {
 }
 .footer_div_two {
   background-color: var(--primary_dark);
-  padding: 0rem 0rem 1rem 0rem;
+  padding: 1rem 2rem 1rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+.footer_div_two h1 {
+  color: white;
+  font-size: 1.5rem;
 }
 .footer_div_two img {
   height: 5rem;
 }
 
 .footer_div_two .logo1 {
-  margin-right: auto;
 }
 .footer_div_two .logo2 {
-  margin-right: auto;
+  align-self: flex-end;
 }
 /* carosel */
 .custom_carosel {
